@@ -24,11 +24,10 @@ aws configure
 #   Default output format [None]:
 
 # Create an AWS S3 bucket for kops to persist its state:
-bucket_name=imesh-kops-state-store
-aws s3api create-bucket \
---bucket ${bucket_name} \
---region us-east-1
-
+#   Set Bucket Name
+bucket_name=imesh-kops-chriswinn
+#   Created an AWS S3 bucket  
+aws s3api create-bucket --bucket ${bucket_name} --region us-east-1
 # Enable versioning for the above S3 bucket:
 aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
 
@@ -44,11 +43,8 @@ export KOPS_STATE_STORE=s3://${bucket_name}
 # the required node count, node size, and AWS zones. The node size 
 # or rather the EC2 instance type would need to be decided according 
 # to the workload that you are planning to run on the Kubernetes cluster:
-kops create cluster \
---node-count=2 \
---node-size=t2.medium \
---zones=us-east-1a \
---name=${KOPS_CLUSTER_NAME}
+kops create cluster --node-count=2 --node-size=t2.medium --zones=us-east-1a --name=${KOPS_CLUSTER_NAME}
+
 #     NOTE: If you are seeing any authentication issues, try to set the 
 #     following environment variables to let kops directly read EC2 
 #     credentials without using the AWS CLI:
