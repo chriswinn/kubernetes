@@ -1,0 +1,88 @@
+[?2004h[?1049h[?1h=[?2004h[1;47r[?12h[?12l[27m[29m[m[H[2J[?25l[47;1H"/var/folders/ds/rhj2728954x51k36894xxgrr0000gn/T/kops-edit-o4vrqyaml" 57L, 1324C[1;1H# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: kops/v1alpha2
+kind: Cluster
+metadata:
+  creationTimestamp: 2019-09-20T20:46:09Z
+  name: imesh.k8s.local
+spec:
+  api:
+    loadBalancer:[13;7Htype: Public
+  authorization:
+    rbac: {}
+  channel: stable
+  cloudProvider: aws
+  configBase: s3://imesh-kops-chriswinn/imesh.k8s.local
+  etcdClusters:
+  - cpuRequest: 200m
+    etcdMembers:
+    - instanceGroup: master-us-east-1a[23;7Hname: a
+    memoryRequest: 100Mi
+    name: main
+  - cpuRequest: 100m
+    etcdMembers:
+    - instanceGroup: master-us-east-1a[29;7Hname: a
+    memoryRequest: 100Mi
+    name: events
+  iam:
+    allowContainerRegistry: true
+    legacy: false
+  kubelet:
+    anonymousAuth: false
+  kubernetesApiAccess:
+  - 0.0.0.0/0
+  kubernetesVersion: 1.13.10
+  masterInternalName: api.internal.imesh.k8s.local
+  masterPublicName: api.imesh.k8s.local
+  networkCIDR: 172.20.0.0/16
+  networking:
+    kubenet: {}
+  nonMasqueradeCIDR: 100.64.0.0/10
+  sshAccess:[1;1H[?25h[?25l[47;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[47;66H[K[1;1H[?25h[?25l[47;1H[K[47;1H:[?2004h[?25hwq[?25l[47;1H[K[1;1H[?25h[27m[29m[m[H[2J[?25l[1;1H# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: kops/v1alpha2
+kind: Cluster
+metadata:
+  creationTimestamp: 2019-09-20T20:46:09Z
+  name: imesh.k8s.local
+spec:
+  api:
+    loadBalancer:[13;7Htype: Public
+  authorization:
+    rbac: {}
+  channel: stable
+  cloudProvider: aws
+  configBase: s3://imesh-kops-chriswinn/imesh.k8s.local
+  etcdClusters:
+  - cpuRequest: 200m
+    etcdMembers:
+    - instanceGroup: master-us-east-1a[23;7Hname: a
+    memoryRequest: 100Mi
+    name: main
+  - cpuRequest: 100m
+    etcdMembers:
+    - instanceGroup: master-us-east-1a[29;7Hname: a
+    memoryRequest: 100Mi
+    name: events
+  iam:
+    allowContainerRegistry: true
+    legacy: false
+  kubelet:
+    anonymousAuth: false
+  kubernetesApiAccess:
+  - 0.0.0.0/0
+  kubernetesVersion: 1.13.10
+  masterInternalName: api.internal.imesh.k8s.local
+  masterPublicName: api.imesh.k8s.local
+  networkCIDR: 172.20.0.0/16
+  networking:
+    kubenet: {}
+  nonMasqueradeCIDR: 100.64.0.0/10
+  sshAccess:
+  - 0.0.0.0/0[1;1H[?25h[48;1H[?2004l[?2004l[?1l>[?1049lVim: Error reading input, exiting...
+Vim: Finished.
+[48;1H[J
