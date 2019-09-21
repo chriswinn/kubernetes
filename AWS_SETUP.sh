@@ -26,8 +26,10 @@ aws configure
 # Create an AWS S3 bucket for kops to persist its state:
 #   Set Bucket Name
 bucket_name=imesh-kops-chriswinn
+
 #   Created an AWS S3 bucket  
 aws s3api create-bucket --bucket ${bucket_name} --region us-east-1
+
 # Enable versioning for the above S3 bucket:
 aws s3api put-bucket-versioning --bucket ${bucket_name} --versioning-configuration Status=Enabled
 
@@ -50,6 +52,7 @@ kops create cluster --node-count=2 --node-size=t2.medium --zones=us-east-1a --na
 #     credentials without using the AWS CLI:
       export AWS_ACCESS_KEY=AccessKeyValue
       export AWS_SECRET_KEY=SecretAccessKeyValue
+
 #     If needed execute the kops create cluster help command to find 
 #     additional parameters:
       kops create cluster --help
